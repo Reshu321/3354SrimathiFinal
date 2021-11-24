@@ -1,0 +1,5 @@
+lfdelnero|Password123|8323390088|no@no.com|10000.0|1000.0|2000.0|2000.0|3000.0|2000.0
+Lucas123|Password9582|8325875456|lfdelnero@gmail.com|5000.0|1000.0|1000.0|1000.0|500.0|1500.0
+doodoo|PassWord|1234567890|email@gmail.com|100000.0|0.0|0.0|0.0|0.0|0.0
+UserPerson|PassWord0|1234567899|email@email.com|100000.0|0.0|0.0|0.0|0.0|0.0
+doodoo1|Password|1234567890|no@nono.com|100000.0|50000.0|50000.0|0.0|0.0|0.0
