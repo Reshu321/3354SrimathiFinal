@@ -17,16 +17,8 @@ import java.awt.event.ActionListener;
 public class homePage extends JFrame 
 {
 	private final JLabel lblNewLabel = new JLabel("Chum Change");
-	public homePage() 
-	{
-		getContentPane().setBackground(Color.ORANGE);
-		getContentPane().setLayout(null);
-		 
-	}
-
 	public homePage(User user) 
 	{
-	 
 		getContentPane().setBackground(Color.ORANGE);
 		getContentPane().setLayout(null);
 		lblNewLabel.setFont(new Font("Kefa", Font.PLAIN, 35));
@@ -36,6 +28,7 @@ public class homePage extends JFrame
         getContentPane().add(lblNewLabel);
 //========================================================================		
 		JButton btnNewButton_1 = new JButton("Finances");
+		btnNewButton_1.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		btnNewButton_1.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
@@ -47,13 +40,17 @@ public class homePage extends JFrame
 				}
 			}
 		});
-		btnNewButton_1.setBounds(64, 240, 244, 50);
+		btnNewButton_1.setForeground(new Color(0, 0, 0));
+		btnNewButton_1.setBounds(64, 318, 244, 50);
 		getContentPane().add(btnNewButton_1);
 		
 		
 //========================================================================		
 		
 		JButton btnNewButton_1_1 = new JButton("Account");
+		btnNewButton_1_1.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		btnNewButton_1_1.setBackground(new Color(0, 128, 0));
+		btnNewButton_1_1.setForeground(new Color(0, 0, 0));
 		btnNewButton_1_1.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
@@ -65,41 +62,47 @@ public class homePage extends JFrame
 				}
 			}
 		});
-		btnNewButton_1_1.setBounds(64, 180, 244, 50);
+		btnNewButton_1_1.setBackground(Color.BLACK);
+		btnNewButton_1_1.setBounds(64, 256, 244, 50);
 		getContentPane().add(btnNewButton_1_1);
 		
 //========================================================================
 		
 		
 		JButton btnNewButton_1_2 = new JButton("Search");
+		btnNewButton_1_2.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		btnNewButton_1_2.setForeground(new Color(0, 0, 0));
 		btnNewButton_1_2.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
 				if(e.getSource()==btnNewButton_1_2) {
 					
-					searchPage sp = new searchPage(); 
+					searchPage sp = new searchPage(user); 
 					 sp.setBounds(10, 10, 450, 600);
 		             sp.setVisible(true);
 				}
 			}
 		});
-		btnNewButton_1_2.setBounds(64, 310, 244, 50);
+		btnNewButton_1_2.setBounds(64, 380, 244, 50);
 		getContentPane().add(btnNewButton_1_2);
 //========================================================================		
 		JButton btnNewButton_1_2_1 = new JButton("FAQ");
+		btnNewButton_1_2_1.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		btnNewButton_1_2_1.setForeground(new Color(0, 0, 0));
 		btnNewButton_1_2_1.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
 				if(e.getSource()==btnNewButton_1_2_1) {
-					faqPage qp = new faqPage(); 
+					
+					test qp = new test(user); 
 					 qp.setBounds(10, 10, 450, 600);
 		             qp.setVisible(true);
 				}
 			}
 		});
-		btnNewButton_1_2_1.setBounds(64, 380, 244, 50);
+		btnNewButton_1_2_1.setBounds(64, 444, 244, 50);
 		getContentPane().add(btnNewButton_1_2_1);
 		
 		
@@ -107,29 +110,37 @@ public class homePage extends JFrame
 		
 //========================================================================
 		JButton btnNewButton_1_2_1_1 = new JButton("Settings");
+		btnNewButton_1_2_1_1.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		btnNewButton_1_2_1_1.setForeground(new Color(0, 0, 0));
 		btnNewButton_1_2_1_1.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
 				if(e.getSource()==btnNewButton_1_2_1_1) {
-					Settings qp = new Settings(); 
+					Settings qp = new Settings(user); 
 					 qp.setBounds(10, 10, 450, 600);
 		             qp.setVisible(true);
 				}
 			}
 		});
-		btnNewButton_1_2_1_1.setBounds(64, 450, 244, 50);
+		btnNewButton_1_2_1_1.setBounds(64, 506, 244, 50);
 		getContentPane().add(btnNewButton_1_2_1_1);
 		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("/Users/reshmamuvvala/Desktop/Work-space/Project1/img/logo.png"));
+		lblNewLabel_1.setBounds(78, 116, 201, 128);
+		getContentPane().add(lblNewLabel_1);
+	
 		
     }
 	
-	/*public void displayHomePage(User user)
+		 
+	
+
+	public homePage() 
 	{
-		JLabel lblNewLabel = new JLabel("Welcome, " + user.getUsername() + "!");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 27));
-		lblNewLabel.setBounds(65, 65, 300, 43);
-		getContentPane().add(lblNewLabel);
+	 
 		
-	}*/
+		
+	}
 }

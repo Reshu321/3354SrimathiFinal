@@ -11,9 +11,25 @@ import java.awt.Font;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 
 public class faqPage extends JFrame {
-	public faqPage() {
+	faqPage()
+	{
+		getContentPane().setBackground(Color.ORANGE);
+		getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel_20 = new JLabel("");
+		lblNewLabel_20.setIcon(new ImageIcon("/Users/reshmamuvvala/Desktop/Work-space/Project1/img/logo.png"));
+		lblNewLabel_20.setBounds(73, 37, 235, 167);
+		getContentPane().add(lblNewLabel_20);
+		
+		
+	}
+	
+	
+	public faqPage(User person) 
+	{
 		getContentPane().setBackground(Color.ORANGE);
 		getContentPane().setLayout(null);
 		
@@ -167,8 +183,30 @@ public class faqPage extends JFrame {
 		gbc_lblNewLabel_18.gridx = 2;
 		gbc_lblNewLabel_18.gridy = 21;
 		getContentPane().add(lblNewLabel_18, gbc_lblNewLabel_18);
+		
+		
+		
+		
+		
+		JButton btnNewButton1 = new JButton("Home");
+		btnNewButton1.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				if(e.getSource()==btnNewButton1) 
+				{
+					homePage hp = new homePage(person); 
+					hp.setBounds(10, 10, 450, 600);
+		            hp.setVisible(true);
+							
+				}
+			}
+		});
+		btnNewButton1.setForeground(new Color(0, 191, 255));
+		btnNewButton1.setBounds(327, 510, 117, 29);
+		getContentPane().add(btnNewButton1);
+		
+		
+		
 	}
-	
-
-
 }

@@ -16,7 +16,15 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 public class Settings extends JFrame{
-	public Settings() {
+	
+	
+	Settings()
+	{
+		
+	}
+	
+	
+	public Settings(User person) {
 		getContentPane().setBackground(Color.ORANGE);
 		getContentPane().setLayout(null);
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -78,6 +86,33 @@ public class Settings extends JFrame{
 		gbc_btnNewButton_1.gridy = 4;
 		getContentPane().add(btnNewButton_1, gbc_btnNewButton_1);
 		btnNewButton_1.addActionListener(e -> System.exit(0));
+		
+		
+		JButton btnNewButton1 = new JButton("Home");
+		btnNewButton1.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				if(e.getSource()==btnNewButton1) 
+				{
+					homePage hp = new homePage(person); 
+					hp.setBounds(10, 10, 450, 600);
+		            hp.setVisible(true);
+							
+				}
+			}
+		});
+		btnNewButton1.setForeground(new Color(0, 191, 255));
+		btnNewButton1.setBounds(327, 510, 117, 29);
+		getContentPane().add(btnNewButton1);
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 

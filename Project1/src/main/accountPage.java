@@ -21,30 +21,31 @@ public class accountPage extends JFrame {
 		JTextPane txtpnHi = new JTextPane();
 		txtpnHi.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		txtpnHi.setText("Email:");
-		txtpnHi.setBounds(34, 55, 250, 28);
+		txtpnHi.setBounds(111, 141, 250, 28);
 		getContentPane().add(txtpnHi);
 		
 		JLabel lblNewLabel = new JLabel("Account Information");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 27));
-		lblNewLabel.setBounds(34, 10, 274, 46);
+		lblNewLabel.setForeground(new Color(0, 191, 255));
+		lblNewLabel.setFont(new Font("Kefa", Font.PLAIN, 27));
+		lblNewLabel.setBounds(106, 35, 274, 46);
 		getContentPane().add(lblNewLabel);
 		
 		JTextPane txtpnHi_1 = new JTextPane();
 		txtpnHi_1.setText("First Name:");
 		txtpnHi_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		txtpnHi_1.setBounds(34, 93, 250, 28);
+		txtpnHi_1.setBounds(111, 201, 250, 28);
 		getContentPane().add(txtpnHi_1);
 		
 		JTextPane txtpnHi_1_1 = new JTextPane();
 		txtpnHi_1_1.setText("Last Name:");
 		txtpnHi_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		txtpnHi_1_1.setBounds(34, 131, 250, 28);
+		txtpnHi_1_1.setBounds(111, 259, 250, 28);
 		getContentPane().add(txtpnHi_1_1);
 		
 		JTextPane txtpnHi_1_2 = new JTextPane();
 		txtpnHi_1_2.setText("Number:");
 		txtpnHi_1_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		txtpnHi_1_2.setBounds(34, 171, 250, 28);
+		txtpnHi_1_2.setBounds(111, 316, 250, 28);
 		getContentPane().add(txtpnHi_1_2);
 	}
 	

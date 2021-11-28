@@ -84,7 +84,6 @@ public class StocksApi
 			String market = Integer.toString(num); 
 			String name = (String) object.get("name"); 
 			String sector = (String) object.get("sector"); 
-			System.out.println(CEO);
 			
 			String[] array = {CEO, market,desp, exchange, HQcountry, HQstate, industry,name,sector }; 
 			

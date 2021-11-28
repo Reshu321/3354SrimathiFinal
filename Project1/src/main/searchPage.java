@@ -14,6 +14,7 @@ import javax.swing.JTextField;
 import org.json.JSONException;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.BorderLayout;
 
 public class searchPage extends JFrame
 {
@@ -21,7 +22,7 @@ public class searchPage extends JFrame
     Container container = getContentPane();
 	JTextField textField = new JTextField();
 	JLabel stock = new JLabel(); 
-	JButton btnNewButton = new JButton("Select");
+	JButton btnNewButton = new JButton("Search");
 	JButton clear = new JButton("Clear");
 	JLabel na ; 
 	JLabel ceo ; 
@@ -29,17 +30,69 @@ public class searchPage extends JFrame
 	JLabel lblNewLabel_3_1;
 	JLabel lblNewLabel_3_1_1; 
 	JLabel lblNewLabel_3_1_1_1 ; 
+	JLabel lblNewLabel_2; 
+	boolean check = false; 
 	private final JLabel lblNewLabel = new JLabel("Stocks Search Page");
 	searchPage()
 	{
+		
+	
+		
+		/*getContentPane().setBackground(Color.ORANGE);
+		getContentPane().setLayout(null);
+		String [] arr = {"Stocks", "Educational Videos"}; 
+		
+		na = new JLabel("Name: " );//+ x[7] );
+		na.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		na.setBounds(20, 240, 400, 16);
+		getContentPane().add(na);
+		
+		//ceo of corp
+		ceo = new JLabel("CEO: ");//+ x[0]);
+		ceo.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		ceo.setBounds(20, 270, 400, 16);
+		getContentPane().add(ceo);
+		
+		//sector of corp
+		lblNewLabel_3 = new JLabel("Sector: ");// +x[8]);
+		lblNewLabel_3.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		lblNewLabel_3.setBounds(20, 300, 400, 16);
+		getContentPane().add(lblNewLabel_3);
+		
+		//exchange of corp
+		lblNewLabel_3_1 = new JLabel("Exchange: ");//+ x[3]);
+		lblNewLabel_3_1.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		lblNewLabel_3_1.setBounds(20, 330, 400, 16);
+		getContentPane().add(lblNewLabel_3_1);
+		
+		lblNewLabel_3_1_1 = new JLabel("Market Capital: ");// + x[1]);
+		lblNewLabel_3_1_1.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		lblNewLabel_3_1_1.setBounds(20, 360, 400, 16);
+		getContentPane().add(lblNewLabel_3_1_1);
+		
+		
+		lblNewLabel_3_1_1_1 = new JLabel("Headquarters: ");// + x[4]+ " "+ x[5] );
+		lblNewLabel_3_1_1_1.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+		lblNewLabel_3_1_1_1.setBounds(20, 390, 400, 16);
+		getContentPane().add(lblNewLabel_3_1_1_1);*/
+		
+		
+		//empty constructor
+	}
+	
+	searchPage(User person)
+	{
 		getContentPane().setBackground(Color.ORANGE);
-		getContentPane().setLayout(null);String [] arr = {"Stocks", "Educational Videos"}; 
+		getContentPane().setLayout(null);
+			//String [] arr = {"Stocks", "Educational Videos"}; 
 		
 	
 			JLabel lblNewLabel_1 = new JLabel("Enter Ticker: ");
+			lblNewLabel_1.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+			lblNewLabel_1.setForeground(new Color(0, 0, 0));
 			lblNewLabel_1.setBounds(20, 173, 104, 16);
 			getContentPane().add(lblNewLabel_1);
-		
+			
 			textField.setBounds(120, 168, 130, 26);
 			getContentPane().add(textField);
 			textField.setColumns(10);
@@ -68,48 +121,102 @@ public class searchPage extends JFrame
 						} 
 						
 						
+						if(x==null)
+						{
+							lblNewLabel_2 = new JLabel("Sorry Ticker is not valid or not found please try a different ticker. ");
+							lblNewLabel_2.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
+							lblNewLabel_2.setForeground(Color.RED);
+							lblNewLabel_2.setBounds(20, 330, 400, 16);
+							getContentPane().add(lblNewLabel_2);
+							check = true; 
+						}
+						if(check && x!=null) 
+						{
+							Container parentx = lblNewLabel_2.getParent();
+							parentx.remove(lblNewLabel_2);
+							parentx.validate();
+							parentx.repaint();
 							
-						
-						
-						
-						//name of corp
-						na = new JLabel("Name: " + x[7] );
-						na.setBounds(20, 240, 400, 16);
-						getContentPane().add(na);
-						
-						//ceo of corp
-						ceo = new JLabel("CEO: "+ x[0]);
-						ceo.setBounds(20, 270, 400, 16);
-						getContentPane().add(ceo);
-						
-						//sector of corp
-						lblNewLabel_3 = new JLabel("Sector: " +x[8]);
-						lblNewLabel_3.setBounds(20, 300, 400, 16);
-						getContentPane().add(lblNewLabel_3);
-						
-						//exchange of corp
-						lblNewLabel_3_1 = new JLabel("Exchange: "+ x[3]);
-						lblNewLabel_3_1.setBounds(20, 330, 400, 16);
-						getContentPane().add(lblNewLabel_3_1);
-						
-						lblNewLabel_3_1_1 = new JLabel("Market Capital: " + x[1]);
-						lblNewLabel_3_1_1.setBounds(20, 360, 400, 16);
-						getContentPane().add(lblNewLabel_3_1_1);
-						
-						
-						lblNewLabel_3_1_1_1 = new JLabel("Headquarters: " + x[4]+ " "+ x[5] );
-						lblNewLabel_3_1_1_1.setBounds(20, 390, 400, 16);
-						getContentPane().add(lblNewLabel_3_1_1_1);
-						
-						
-						
-						// head quarters of corp
-						
+							na = new JLabel("Name: " + x[7] );
+							na.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+							na.setBounds(20, 240, 400, 16);
+							getContentPane().add(na);
+							
+							//ceo of corp
+							ceo = new JLabel("CEO: "+ x[0]);
+							ceo.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+							ceo.setBounds(20, 270, 400, 16);
+							getContentPane().add(ceo);
+							
+							//sector of corp
+							lblNewLabel_3 = new JLabel("Sector: "+x[8]);
+							lblNewLabel_3.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+							lblNewLabel_3.setBounds(20, 300, 400, 16);
+							getContentPane().add(lblNewLabel_3);
+							
+							//exchange of corp
+							lblNewLabel_3_1 = new JLabel("Exchange: "+ x[3]);
+							lblNewLabel_3_1.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+							lblNewLabel_3_1.setBounds(20, 330, 400, 16);
+							getContentPane().add(lblNewLabel_3_1);
+							
+							lblNewLabel_3_1_1 = new JLabel("Market Capital: " + x[1]);
+							lblNewLabel_3_1_1.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+							lblNewLabel_3_1_1.setBounds(20, 360, 400, 16);
+							getContentPane().add(lblNewLabel_3_1_1);
+							
+							
+							lblNewLabel_3_1_1_1 = new JLabel("Headquarters: " + x[4]+ " "+ x[5] );
+							lblNewLabel_3_1_1_1.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+							lblNewLabel_3_1_1_1.setBounds(20, 390, 400, 16);
+							getContentPane().add(lblNewLabel_3_1_1_1);
+							
+							check = false; 
+							
+						}
+						else
+						{
+							
+							na = new JLabel("Name: " + x[7] );
+							na.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+							na.setBounds(20, 240, 400, 16);
+							getContentPane().add(na);
+							
+							//ceo of corp
+							ceo = new JLabel("CEO: "+ x[0]);
+							ceo.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+							ceo.setBounds(20, 270, 400, 16);
+							getContentPane().add(ceo);
+							
+							//sector of corp
+							lblNewLabel_3 = new JLabel("Sector: "+x[8]);
+							lblNewLabel_3.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+							lblNewLabel_3.setBounds(20, 300, 400, 16);
+							getContentPane().add(lblNewLabel_3);
+							
+							//exchange of corp
+							lblNewLabel_3_1 = new JLabel("Exchange: "+ x[3]);
+							lblNewLabel_3_1.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+							lblNewLabel_3_1.setBounds(20, 330, 400, 16);
+							getContentPane().add(lblNewLabel_3_1);
+							
+							lblNewLabel_3_1_1 = new JLabel("Market Capital: " + x[1]);
+							lblNewLabel_3_1_1.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+							lblNewLabel_3_1_1.setBounds(20, 360, 400, 16);
+							getContentPane().add(lblNewLabel_3_1_1);
+							
+							
+							lblNewLabel_3_1_1_1 = new JLabel("Headquarters: " + x[4]+ " "+ x[5] );
+							lblNewLabel_3_1_1_1.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+							lblNewLabel_3_1_1_1.setBounds(20, 390, 400, 16);
+							getContentPane().add(lblNewLabel_3_1_1_1);
+						}
+							
 					
-						 
 					}
 				}
 			});
+			btnNewButton.setForeground(new Color(0, 191, 255));
 			btnNewButton.setBounds(250, 168, 117, 29);
 			getContentPane().add(btnNewButton);
 			
@@ -154,14 +261,36 @@ public class searchPage extends JFrame
 					}
 				}
 			});
-			clear.setBounds(136, 494, 117, 29);
+			clear.setForeground(new Color(0, 191, 255));
+			clear.setBounds(136, 510, 117, 29);
 			getContentPane().add(clear);
 			
 			
 			lblNewLabel.setFont(new Font("Monospaced", Font.BOLD | Font.ITALIC, 19));
+			lblNewLabel.setForeground(new Color(0, 191, 255));
 			lblNewLabel.setBounds(89, 100, 221, 61);
 			
 			getContentPane().add(lblNewLabel);
+			
+			
+			JButton btnNewButton1 = new JButton("Home");
+			btnNewButton1.addActionListener(new ActionListener() 
+			{
+				public void actionPerformed(ActionEvent e) 
+				{
+					if(e.getSource()==btnNewButton1) 
+					{
+						homePage hp = new homePage(person); 
+						hp.setBounds(10, 10, 450, 600);
+			            hp.setVisible(true);
+								
+					}
+				}
+			});
+			btnNewButton1.setForeground(new Color(0, 191, 255));
+			btnNewButton1.setBounds(327, 510, 117, 29);
+			getContentPane().add(btnNewButton1);
+			
 			
 		
 	}

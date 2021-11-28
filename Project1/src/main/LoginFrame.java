@@ -20,6 +20,7 @@ public class LoginFrame extends JFrame implements ActionListener {
     JButton resetButton = new JButton("RESET");
     JCheckBox showPassword = new JCheckBox("Show Password");
     JButton btnNewButton ; 
+    private final JLabel lblNewLabel = new JLabel("New label");
    
 
     LoginFrame() {
@@ -35,24 +36,28 @@ public class LoginFrame extends JFrame implements ActionListener {
     }
 
     public void setLocationAndSize() {
+        userLabel.setFont(new Font("Lucida Grande", Font.BOLD, 15));
     	
-        userLabel.setBounds(50, 150, 100, 30);
-        passwordLabel.setBounds(50, 220, 100, 30);
-        userTextField.setBounds(150, 150, 150, 30);
-        passwordField.setBounds(150, 220, 150, 30);
-        showPassword.setBounds(150, 250, 150, 30);
-        loginButton.setBounds(50, 300, 100, 30);
-        resetButton.setBounds(200, 300, 100, 30);
+        userLabel.setBounds(36, 240, 100, 30);
+        passwordLabel.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+        passwordLabel.setBounds(36, 305, 100, 30);
+        userTextField.setBounds(150, 241, 150, 30);
+        passwordField.setBounds(150, 306, 150, 30);
+        showPassword.setBounds(150, 348, 150, 30);
+        loginButton.setForeground(new Color(0, 191, 255));
+        loginButton.setBounds(61, 416, 100, 30);
+        resetButton.setForeground(new Color(0, 191, 255));
+        resetButton.setBounds(232, 416, 100, 30);
         
         btnNewButton = new JButton("Create  New Account");
         btnNewButton.setForeground(new Color(0, 191, 255));
-        btnNewButton.setBounds(80, 397, 193, 29);
+        btnNewButton.setBounds(107, 477, 193, 29);
         getContentPane().add(btnNewButton);
         
         JLabel lblNewLabel_1 = new JLabel("Chum Change");
         lblNewLabel_1.setFont(new Font("Lucida Grande", Font.PLAIN, 35));
         lblNewLabel_1.setForeground(new Color(0, 191, 255));
-        lblNewLabel_1.setBounds(50, 62, 304, 58);
+        lblNewLabel_1.setBounds(91, 31, 304, 58);
         getContentPane().add(lblNewLabel_1);
         
 
@@ -69,6 +74,10 @@ public class LoginFrame extends JFrame implements ActionListener {
         container.add(loginButton);
         container.add(resetButton);
         container.setBackground(new Color(255,153,51));
+        lblNewLabel.setIcon(new ImageIcon("/Users/reshmamuvvala/Desktop/Work-space/Project1/img/logo.png"));
+        lblNewLabel.setBounds(115, 89, 201, 128);
+        
+        getContentPane().add(lblNewLabel);
     }
 
     public void addActionEvent() {
@@ -138,8 +147,6 @@ public class LoginFrame extends JFrame implements ActionListener {
          }
 		
 	}
-
-	
 }
 
 

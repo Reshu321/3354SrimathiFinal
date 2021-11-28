@@ -38,12 +38,14 @@ public class newLoginFrame extends JFrame implements ActionListener {
     }
 
     public void setLocationAndSize() {
-        userLabel.setBounds(21, 180, 100, 30);
-        passwordLabel.setBounds(21, 250, 100, 30);
-        userTextField.setBounds(127, 180, 150, 30);
-        passwordField.setBounds(127, 250, 150, 30);
-      showPassword.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
-       showPassword.setBounds(270, 251, 106, 30);
+        userLabel.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+        userLabel.setBounds(21, 180, 150, 40);
+        passwordLabel.setFont(new Font("Lucida Grande", Font.BOLD, 15));
+        passwordLabel.setBounds(21, 250, 136, 40);
+        userTextField.setBounds(157, 181, 150, 30);
+        passwordField.setBounds(157, 250, 150, 30);
+      showPassword.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
+       showPassword.setBounds(317, 251, 127, 30);
         loginButton.setFont(new Font("Lucida Grande", Font.BOLD, 15));
         loginButton.setForeground(new Color(0, 191, 255));
         loginButton.setBounds(98, 488, 200, 30);
@@ -58,20 +60,22 @@ public class newLoginFrame extends JFrame implements ActionListener {
         container.add(showPassword);
         container.add(loginButton);
         container.setBackground(new Color(255,153,51));
+        lblAddEmail.setFont(new Font("Lucida Grande", Font.BOLD, 15));
         lblAddEmail.setBounds(21, 320, 100, 30);
         
         getContentPane().add(lblAddEmail);
         
         emailTextField = new JTextField();
-        emailTextField.setBounds(127, 320, 150, 30);
+        emailTextField.setBounds(157, 320, 150, 30);
         getContentPane().add(emailTextField);
         
         JLabel lblAddPhone = new JLabel("Add Phone:");
+        lblAddPhone.setFont(new Font("Lucida Grande", Font.BOLD, 15));
         lblAddPhone.setBounds(21, 390, 100, 30);
         getContentPane().add(lblAddPhone);
         
         numberTextField = new JTextField();
-        numberTextField.setBounds(127, 390, 150, 30);
+        numberTextField.setBounds(157, 390, 150, 30);
         getContentPane().add(numberTextField);
         lblNewLabel_2.setFont(new Font("Lucida Grande", Font.PLAIN, 35));
         lblNewLabel_2.setForeground(new Color(0, 191, 255));
@@ -128,7 +132,7 @@ public class newLoginFrame extends JFrame implements ActionListener {
             pwdText = passwordField.getText();
             email = emailTextField.getText(); 
             phone =  numberTextField.getText();
-            boolean check = true; 
+            boolean check = false; 
            
        
          
@@ -140,10 +144,10 @@ public class newLoginFrame extends JFrame implements ActionListener {
 	                lblNewLabel.setForeground(Color.RED);
 	                lblNewLabel.setBounds(127, 210, 317, 16);
 	                getContentPane().add(lblNewLabel);
+	                check = true; 
+	                
 	            }
-	         
-	            
-           
+	           
             //validates password
             for (int i = 0; i < pwdText.length(); i++){
                 // Sets character to current string element
@@ -167,6 +171,7 @@ public class newLoginFrame extends JFrame implements ActionListener {
                   lblNewLabel_1.setForeground(Color.RED);
                   lblNewLabel_1.setBounds(127, 280, 317, 16);
                   getContentPane().add(lblNewLabel_1);
+                  
               }
               
               //validates email

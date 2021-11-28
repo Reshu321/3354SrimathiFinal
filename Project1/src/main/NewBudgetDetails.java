@@ -220,66 +220,68 @@ public class NewBudgetDetails extends JFrame
 					double totalSpendings = en + f + u + m + s;
 					double remainingBalance = i - totalSpendings;
 				    // Checks if remaining balance is negative
-					  System.out.println("help"); 
-					  boolean check = false;
-				    if (remainingBalance < 0)
-				    {
-				    	lblNewLabel_1 = new JLabel("You have gone over your monthly income! Please try again.");
-						lblNewLabel_1.setForeground(Color.RED);
-						lblNewLabel_1.setBounds(41, 502, 389, 16);
-						getContentPane().add(lblNewLabel_1);
-						
-						person.setEntertainment(0);
-						person.setUtilities(0);
-						person.setSavings(0);
-						person.setFood(0);
-						person.setMiscellaneous(0);
-						check = true; 
-						
-				    }
-				    else
-				    {	
-				    	homePage hframe = new homePage(person); 
-			             hframe.setBounds(10, 10, 370, 600);
-			             hframe.setVisible(true);
-					
-				    }
-					
+					// System.out.println("help"); 
+				
+					  if (remainingBalance < 0)
+					    {
+					        System.out.println("helo"); 
+					        
+					    	lblNewLabel_1 = new JLabel("You have gone over your monthly income! Please try again.");
+							lblNewLabel_1.setForeground(Color.RED);
+							lblNewLabel_1.setBounds(36, 455, 414, 16);
+							getContentPane().add(lblNewLabel_1);
+							
+							//sets back to original values 
+							person.setMonthlyIncome(0);
+							
+							
+							person.setEntertainment(0);
+							person.setUtilities(0);
+							person.setSavings(0);
+							person.setFood(0);
+							person.setMiscellaneous(0);
+					      
+					    }
+					    else
+					    {
+					    	Container parent = lblNewLabel_1.getParent();
+							parent.remove(lblNewLabel_1 );
+							parent.validate();
+							parent.repaint();
 
-					JButton btnNewButton1 = new JButton("Home");
-					btnNewButton1.addActionListener(new ActionListener() 
-					{
-						public void actionPerformed(ActionEvent e) 
-						{
-							if(e.getSource()==btnNewButton1) 
-							{
-								homePage hp = new homePage(person); 
-								hp.setBounds(10, 10, 450, 600);
-					            hp.setVisible(true);
-										
-							}
-						}
-					});
-					btnNewButton1.setForeground(new Color(0, 191, 255));
-					btnNewButton1.setBounds(300, 510, 117, 29);
-					getContentPane().add(btnNewButton1);
-					
-					
-					
-					
-					
+					    	lblNewLabel_1 = new JLabel("Your changes have been saved!");
+							lblNewLabel_1.setForeground(Color.BLUE);
+							lblNewLabel_1.setBounds(36, 455, 414, 16);
+							getContentPane().add(lblNewLabel_1);
+					    }
 					
 				}
 			}
 			
 		}); 
-		btnNewButton.setBounds(166, 453, 117, 29);
+		btnNewButton.setBounds(150, 510, 117, 29);
 		getContentPane().add(btnNewButton);
 		
-		
-		
+		JButton btnNewButton1 = new JButton("Home");
+		btnNewButton1.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				if(e.getSource()==btnNewButton1) 
+				{
+					homePage hp = new homePage(person); 
+					hp.setBounds(10, 10, 450, 600);
+		            hp.setVisible(true);
+							
+				}
+			}
+		});
+		btnNewButton1.setForeground(new Color(0, 191, 255));
+		btnNewButton1.setBounds(300, 510, 117, 29);
+		getContentPane().add(btnNewButton1);
 		
 		
 	}
 
+	
 }
